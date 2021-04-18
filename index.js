@@ -5,12 +5,24 @@ const generateReadme = (answers) =>
 `# ${answers.project}
 [![License: MIT](https://img.shields.io/badge/License-${answers.license}-yellow.svg)](https://opensource.org/licenses/${answers.license})
 
+## Contributer info
+* Contributor GitHub: ${answers.userName}
+* Contributor Email: ${answers.address}
+
 ## Description
 ${answers.briefProject}
 
-## Contributer info
-Contributor GitHub: ${answers.userName}
-Contributor Email: ${answers.address}
+### Depndencies to be run:
+${answers.dependencies}
+
+### Prompt to run tests:
+${answers.tests}
+
+### Using this repo:
+${answers.usage}
+
+### How to contribute to this repo:
+${answers.contributing}
 
 
 `;
