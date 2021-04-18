@@ -1,20 +1,31 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadme = (answers) =>
-`#title
-${answers.title}`;
+const generateReadme = (answers) => 
+`# ${answers.project}
+[![License: MIT](https://img.shields.io/badge/License-${answers.license}-yellow.svg)](https://opensource.org/licenses/${answers.license})
+
+## Description
+${answers.briefProject}
+
+## Contributer info
+Contributor GitHub: ${answers.userName}
+Contributor Email: ${answers.address}
+
+
+`;
+
 
     inquirer
         .prompt([
             {
                 type: 'input',
-                message: 'GitHub username?',
+                message: 'What is your GitHub username?',
                 name: 'userName',
             },
             {
                 type: 'input',
-                message: 'What is you email address?',
+                message: 'What is your email address?',
                 name: 'address',
             }, {
                 type: 'input',
@@ -22,7 +33,7 @@ ${answers.title}`;
                 name: 'project',
             }, {
                 type: 'input',
-                message: 'What is a brief description of your project?',
+                message: 'Please provide a description of your project?',
                 name: 'briefProject'
             }, {
                 type: 'list',
@@ -55,9 +66,10 @@ ${answers.title}`;
         ])
 
         .then((answers) => {
-            const readmeContent = generateReadme(answers);
+            let readmeContent = generateReadme(answers);
+            console.log(readmeContent)
 
-            fs.writeFile('README.md', readmeContent, (err) =>
-                err ? console.log(err) : console.log('Successfully created index.html!')
+            fs.writeFile('genREADME.md', readmeContent, (err) =>
+                err ? console.log(err) : console.log('Successfully created README!')
             );
         });
