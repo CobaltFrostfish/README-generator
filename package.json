@@ -1,0 +1,22 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "readme generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CobaltFrostfish/README-generator.git"
+  },
+  "keywords": [
+    "readme"
+  ],
+  "author": "C Whalen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CobaltFrostfish/README-generator/issues"
+  },
+  "homepage": "https://github.com/CobaltFrostfish/README-generator#readme"
+}
